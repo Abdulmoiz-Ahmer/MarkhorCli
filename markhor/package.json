@@ -1,0 +1,29 @@
+{
+  "name": "markhor",
+  "version": "1.0.0",
+  "description": "This is a cli tool that helps you generate restful applications using architectures or design patterns.",
+  "main": "index.js",
+  "scripts": {
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "test": "test"
+  },
+  "bin": "cli.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdulmoiz-Ahmer/markhorosaurusCli.git"
+  },
+  "keywords": [
+    "markhor-cli",
+    "cli",
+    "markhorcli"
+  ],
+  "author": "abdulmoiz ahmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abdulmoiz-Ahmer/markhorosaurusCli/issues"
+  },
+  "homepage": "https://github.com/Abdulmoiz-Ahmer/markhorosaurusCli#readme",
+  "dependencies": {
+    "yargs": "^17.5.1"
+  }
+}
