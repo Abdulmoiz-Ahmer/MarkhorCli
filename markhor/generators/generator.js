@@ -1,6 +1,6 @@
 const fileHandling = require("../helpers/file-handling");
 
-function generate(directories, options = { architecture: "mvc" }) {
+function generate(directories, options = { architecture: "mv" }) {
   if (directories.length === 0) {
     return;
   }
@@ -15,22 +15,29 @@ function generate(directories, options = { architecture: "mvc" }) {
     }
 
     entry.files.forEach(function (file) {
-      let path = `app/${entry.directory}/${file.name}`;
+      let destinationPath = `app/${entry.directory}/${file.name}`;
+      let sourcePath = `${options.architecture}/${file.type}`;
+
       if (entry.directory === "root") {
-        path = `app/${file.name}`;
+        destinationPath = `app/${file.name}`;
       }
+
+      if (file.framework !== undefined) {
+        sourcePath += `/${file.framework}`;
+      }
+
+      sourcePath += `/${file.name}`;
+
       fileHandling.writeToFile(
-        path,
-        fileHandling.readFromFile(
-          `${options.architecture}/${file.type}/${file.name}`
-        )
+        destinationPath,
+        fileHandling.readFromFile(sourcePath)
       );
     });
   });
 }
 
-const mvcGenerator = {
+const generator = {
   generate,
 };
 
-module.exports = mvcGenerator;
+module.exports = generator;

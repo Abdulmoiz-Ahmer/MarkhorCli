@@ -29,7 +29,7 @@ function readFromFile(file) {
     return;
   }
 
-  const content = fs.readFileSync(`../data/${file}`);
+  const content = fs.readFileSync(`./data/${file}`);
   return content.toString();
 }
 

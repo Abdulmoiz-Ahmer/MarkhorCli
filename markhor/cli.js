@@ -2,9 +2,9 @@
 const variants = require("./index");
 
 console.log(
-  "What kind of architecture/design pattern you would like (mvc|mvvm|layered)"
+  "What kind of architecture/design pattern you would like (mv style|three layered style)"
 );
 
-// if (process.argv(2) === "mvc") {
-  variants.createMVC();
+// if (process.argv(2) === "mv") {
+// variants.createMV();
 // }
