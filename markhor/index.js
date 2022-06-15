@@ -70,8 +70,8 @@ function createThreeLayeredArchitecture() {
   generator.generate(threeLayeredStructure, { architecture: "3l" });
 }
 
-createMV();
-// createThreeLayeredArchitecture();
+// createMV();
+createThreeLayeredArchitecture();
 
 const variants = {
   createMV,
