@@ -40,22 +40,59 @@ const mvStructure = [
 const threeLayeredStructure = [
   { directory: "api", files: [{ name: "api.md", type: "md" }] },
   {
+    directory: "api",
+    files: [
+      { name: "app.js", type: "js", framework: "express", language: "js" },
+    ],
+  },
+  {
+    directory: "api/routes",
+    files: [
+      { name: "routes.js", type: "js", framework: "express", language: "js" },
+    ],
+  },
+  {
+    directory: "api",
+    files: [
+      {
+        name: "validator.js",
+        type: "js",
+        framework: "express",
+        language: "js",
+      },
+    ],
+  },
+  {
+    directory: "api",
+    files: [
+      {
+        name: "in-serializer.js",
+        type: "js",
+        framework: "express",
+        language: "js",
+      },
+    ],
+  },
+  // { directory: "api/assets", files: [{ name: "assets.md", type: "md" }] },
+
+  {
     directory: "service",
     files: [{ name: "service.md", type: "md" }],
   },
+  {
+    directory: "service",
+    files: [
+      {
+        name: "out-serializer.js",
+        type: "js",
+        framework: "express",
+        language: "js",
+      },
+    ],
+  },
   { directory: "integration", files: [{ name: "integration.md", type: "md" }] },
-
-  {
-    directory: "api",
-    files: [{ name: "app.js", type: "js" }],
-  },
-  {
-    directory: "api/",
-    files: [{ name: "routes.js", type: "js" }],
-  },
-  { directory: "assets", files: [{ name: "assets.md", type: "md" }] },
+  { directory: "integration/Dao", files: [] },
   { directory: "root", files: [{ name: "package.json", type: "json" }] },
-
   {
     directory: "root",
     files: [{ name: ".gitignore", type: "git" }],
@@ -69,9 +106,6 @@ function createMV() {
 function createThreeLayeredArchitecture() {
   generator.generate(threeLayeredStructure, { architecture: "3l" });
 }
-
-// createMV();
-createThreeLayeredArchitecture();
 
 const variants = {
   createMV,
