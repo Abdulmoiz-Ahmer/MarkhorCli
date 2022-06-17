@@ -1,1 +1,1 @@
-validators: ajv, joi, validator.js, validatorjs
+docker default file.

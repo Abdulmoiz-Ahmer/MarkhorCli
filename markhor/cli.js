@@ -23,7 +23,7 @@ inquirer
       choices: ["Mvc style", "Three Layered Architecture"],
     },
     {
-      type: "rawlist",
+      type: "list",
       name: "template",
       message:
         "Which template would you like to use? (Press <Enter> to continue or Press <Esc> to cancel",
@@ -41,32 +41,46 @@ inquirer
     },
     {
       type: "rawlist",
-      name: "database-adapter",
+      name: "dbadapter",
       message:
         "Which orm/query builder would you like to use? (Press <Enter> to continue or Press <Esc> to cancel)",
-      choices: ["none", "sequelize", "knex.js", "none"],
+      choices: ["none", "sequelize", "knex.js", "mongoose"],
     },
     {
       type: "rawlist",
       name: "validators",
       message:
-        "Which orm/query builder would you like to use? (Press <Enter> to continue or Press <Esc> to cancel)",
-      choices: ["none", "sequelize", "knex.js", "none"],
+        "Which validator would you like to use? (Press <Enter> to continue or Press <Esc> to cancel)",
+      choices: [
+        "none",
+        "validator.js",
+        "joi",
+        "ajv",
+        "json-rule-engine",
+        "validatorjs",
+      ],
+    },
+    {
+      type: "rawlist",
+      name: "auth",
+      message:
+        "Which tokenization library would you like to use? (Press <Enter> to continue or Press <Esc> to cancel)",
+      choices: ["none", "jwt", "pasteto"],
     },
   ])
   .then((answers) => {
     // Use user feedback for... whatever!!
     console.log(answers);
-    switch (answers.architecture) {
-      case "Mvc style":
-        variants.createMvcStyle();
-        break;
-      case "Three Layered Architecture":
-        variants.createThreeLayeredArchitecture();
-        break;
-      default:
-        console.log("No such option exist");
-    }
+    // switch (answers.architecture) {
+    //   case "Mvc style":
+    //     variants.createMvcStyle();
+    //     break;
+    //   case "Three Layered Architecture":
+    //     variants.createThreeLayeredArchitecture();
+    //     break;
+    //   default:
+    //     console.log("No such option exist");
+    // }
   })
   .catch((error) => {
     if (error === InterruptedPrompt.EVENT_INTERRUPTED) {
