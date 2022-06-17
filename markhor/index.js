@@ -1,5 +1,5 @@
 const generator = require("./generators/generator");
-const mvStructure = [
+const mvcStructure = [
   {
     directory: "api",
     files: [{ name: "api.md", type: "md" }],
@@ -66,7 +66,7 @@ const threeLayeredStructure = [
     directory: "api",
     files: [
       {
-        name: "in-serializer.js",
+        name: "input-serializer.js",
         type: "js",
         framework: "express",
         language: "js",
@@ -83,7 +83,7 @@ const threeLayeredStructure = [
     directory: "service",
     files: [
       {
-        name: "out-serializer.js",
+        name: "output-serializer.js",
         type: "js",
         framework: "express",
         language: "js",
@@ -99,8 +99,8 @@ const threeLayeredStructure = [
   },
 ];
 
-function createMV() {
-  generator.generate(mvStructure);
+function createMvcStyle() {
+  generator.generate(mvcStructure);
 }
 
 function createThreeLayeredArchitecture() {
@@ -108,7 +108,7 @@ function createThreeLayeredArchitecture() {
 }
 
 const variants = {
-  createMV,
+  createMvcStyle,
   createThreeLayeredArchitecture,
 };
 

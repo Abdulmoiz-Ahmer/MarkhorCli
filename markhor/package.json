@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Abdulmoiz-Ahmer/markhorosaurusCli#readme",
   "dependencies": {
-    "yargs": "^17.5.1"
+    "inquirer": "^8.2.4",
+    "inquirer-interrupted-prompt": "^1.0.2"
   }
 }

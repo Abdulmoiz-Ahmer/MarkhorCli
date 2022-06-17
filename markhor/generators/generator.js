@@ -1,6 +1,6 @@
 const fileHandling = require("../helpers/file-handling");
 
-function generate(directories, options = { architecture: "mv" }) {
+function generate(directories, options = { architecture: "mvc" }) {
   if (directories.length === 0) {
     return;
   }
